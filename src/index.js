@@ -3,5 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<h1>Hello World</h1>, document.getElementById('root'));
+const App = () => {
+    return (
+        <div className="lab-wrapper">
+            <h1>content</h1>
+        </div>
+    )
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
