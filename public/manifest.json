@@ -1,0 +1,15 @@
+{
+  "short_name": "The Lab",
+  "name": "The Lab: A Place to Chef if Up!",
+  "icons": [
+    {
+      "src": "test-tube.png",
+      "sizes": "16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
