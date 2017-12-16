@@ -1,15 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import registerServiceWorker from './registerServiceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import registerServiceWorker from "./registerServiceWorker";
+
+import DancingBalls from "./components/dancing-ball";
 
 const App = () => {
     return (
         <div className="lab-wrapper">
-            <h1>content</h1>
+            <DancingBalls />
         </div>
-    )
-}
+    );
+};
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById("root"));
+
+//
 registerServiceWorker();
