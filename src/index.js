@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./index.css";
 import registerServiceWorker from "./util/registerServiceWorker";
 
-import DancingBalls from "./components/dancing-ball";
+import DancingBalls from "./experiments/dancing-ball";
 
 const Home = () => {
     return (
