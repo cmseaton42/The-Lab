@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./index.css";
-import registerServiceWorker from "./registerServiceWorker";
+import registerServiceWorker from "./util/registerServiceWorker";
 
 import DancingBalls from "./components/dancing-ball";
 
