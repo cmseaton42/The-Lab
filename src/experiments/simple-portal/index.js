@@ -15,6 +15,7 @@ export default class SimplePortal extends Component {
 
         this._onChange = this._onChange.bind(this);
         this._onSubmit = this._onSubmit.bind(this);
+        this._onFocus = this._onFocus.bind(this);
     }
 
     _onChange(e) {
@@ -35,6 +36,10 @@ export default class SimplePortal extends Component {
         this.setState({ showDialog, list, input: "" });
     }
 
+    _onFocus() {
+        this.textInput.focus();
+    }
+
     render() {
         const { showDialog, list, input } = this.state;
 
@@ -42,7 +47,7 @@ export default class SimplePortal extends Component {
             <div className="container">
                 <div>
                     <button
-                        className="btn"
+                        className="btn btn-reg"
                         onClick={e =>
                             this.setState({
                                 showDialog: !showDialog
@@ -64,11 +69,22 @@ export default class SimplePortal extends Component {
 
                 {/* Show Modal - Renders Outside React Hierarchy Tree via Portal Pattern */}
                 {showDialog === true ? (
-                    <DialogModal>
+                    <DialogModal onFocus={this._onFocus}>
                         <div className="dialog-wrapper">
-                            <h1>New List Item</h1>
+                            <i
+                                onClick={e => this.setState({ showDialog: false })}
+                                className="fa fa-close btn-close"
+                            />
+                            <h3>New List Item</h3>
                             <form onSubmit={this._onSubmit}>
-                                <input type="text" value={input} onChange={this._onChange} />
+                                <input
+                                    ref={input => {
+                                        this.textInput = input;
+                                    }}
+                                    type="text"
+                                    value={input}
+                                    onChange={this._onChange}
+                                />
                             </form>
                         </div>
                     </DialogModal>
@@ -88,6 +104,7 @@ class DialogModal extends Component {
 
     componentDidMount() {
         this.body.appendChild(this.el);
+        this.props.onFocus();
     }
 
     componentWillUnmount() {
