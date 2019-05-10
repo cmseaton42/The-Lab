@@ -32,20 +32,20 @@ export default class DancingBalls extends Component {
                 targets: red,
                 translateX: [{ value: 180 }, { value: 350 }, { value: 445 }],
                 translateY: [{ value: 55 }, { value: 110 }, { value: 110 }],
-                duration: 4000
+                duration: 2500
             })
             .add({
                 targets: blue,
                 translateX: [{ value: 180 }, { value: 350 }, { value: 445 }],
                 translateY: [{ value: 55 }, { value: -55 }, { value: -55 }],
-                duration: 4000,
+                duration: 2500,
                 offset: 200
             })
             .add({
                 targets: green,
                 translateX: [{ value: 180 }, { value: 445 }],
                 translateY: [{ value: -110 }, { value: -55 }, { value: -55 }],
-                duration: 4000,
+                duration: 2500,
                 offset: 600
             });
     }
@@ -91,8 +91,7 @@ export default class DancingBalls extends Component {
                     onClick={e => {
                         this.anime.restart();
                         this.setState({ play: true });
-                    }}
-                >
+                    }}>
                     <p>Restart</p>
                 </div>
             </div>
