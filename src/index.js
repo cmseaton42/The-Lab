@@ -1,11 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import "./index.css";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import "./index.scss";
 import registerServiceWorker from "./util/registerServiceWorker";
 
 import DancingBalls from "./experiments/dancing-ball";
 import SimplePortal from "./experiments/simple-portal";
+import FlipMove from "./experiments/flip-move";
 
 const Home = () => {
     return (
@@ -16,31 +17,36 @@ const Home = () => {
 };
 
 const App = () => {
-    return <Router>
+    return (
+        <Router>
             <div>
                 {/* Nav Menu */}
                 <div className="navbar">
                     <div className="dropdown">
                         <button className="dropbtn">
-                            Demos
-                            <i className="fa fa-caret-down" />
+                            Demos <i className="fa fa-caret-down" />
                         </button>
                         <div className="dropdown-content">
                             <Link to="/">Home</Link>
-                            <Link to="Dancing-Ball-Demo">Dancing Balls</Link>
-                            <Link to="Simple-Portal-Demo">Simple Portal</Link>
+                            <Link to="/Dancing-Ball-Demo">Dancing Balls</Link>
+                            <Link to="/Simple-Portal-Demo">Simple Portal</Link>
+                            <Link to="/Flip-Move-Demo">Flip Move</Link>
                         </div>
                     </div>
                 </div>
 
                 {/* Where the magic Happens */}
                 <div className="lab-wrapper">
-                    <Route exact path="/" component={Home} />
-                    <Route path="/Dancing-Ball-Demo" component={DancingBalls} />
-                    <Route path="/Simple-Portal-Demo" component={SimplePortal} />
+                    <Switch>
+                        <Route exact path="/" component={Home} />
+                        <Route path="/Dancing-Ball-Demo" component={DancingBalls} />
+                        <Route path="/Simple-Portal-Demo" component={SimplePortal} />
+                        <Route path="/Flip-Move-Demo" component={FlipMove} />
+                    </Switch>
                 </div>
             </div>
-        </Router>;
+        </Router>
+    );
 };
 
 ReactDOM.render(<App />, document.getElementById("root"));

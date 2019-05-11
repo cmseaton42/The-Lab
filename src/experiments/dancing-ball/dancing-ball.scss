@@ -4,9 +4,11 @@
     width: 50px;
     margin: 5px;
     transform-origin: 0 0;
+
     &:hover {
         cursor: pointer;
     }
+
     &-demo {
         position: relative;
         height: 400px;
@@ -15,15 +17,19 @@
         flex-direction: column;
         justify-content: space-around;
     }
+
     &-wrapper {
         width: 100%;
     }
+
     &.red {
         background: red;
     }
+
     &.blue {
         background: blue;
     }
+
     &.green {
         background: green;
     }
@@ -50,12 +56,14 @@
     align-self: center;
     display: flex;
     margin: 20px;
+
     p {
         margin: auto;
         font-size: 20px;
         font-family: sans-serif;
         font-weight: bold;
     }
+
     &:hover {
         cursor: pointer;
         background: grey;
@@ -69,7 +77,7 @@
     width: 100px;
     border-radius: 50%;
     background: black;
-    opacity: .5;
+    opacity: 0.5;
     position: absolute;
     left: 200px;
     top: 150px;
@@ -81,7 +89,7 @@
     &:hover {
         cursor: pointer;
         color: lightgray;
-        opacity: .65;
+        opacity: 0.65;
     }
 
     div {

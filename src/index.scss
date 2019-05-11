@@ -23,13 +23,12 @@ body {
     justify-content: center;
 }
 
-
 /* Navbar container */
-
 .navbar {
     overflow: hidden;
     background-color: white;
-    font-family: Arial;
+    font-family: sans-serif;
+
     a {
         float: left;
         font-size: 16px;
@@ -40,12 +39,17 @@ body {
     }
 }
 
-
 /* The dropdown container */
-
 .dropdown {
     float: left;
     overflow: hidden;
+    cursor: pointer;
+    transition: all ease-in-out 250ms;
+
+    &:hover {
+        cursor: pointer;
+    }
+
     .dropbtn {
         font-size: 16px;
         border: none;
@@ -53,20 +57,21 @@ body {
         color: black;
         padding: 14px 16px;
         background-color: inherit;
+        cursor: pointer;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
 
-
 /* Add a red background color to navbar links on hover */
-
 .navbar a:hover,
 .dropdown:hover .dropbtn {
     background-color: white;
 }
 
-
 /* Dropdown content (hidden by default) */
-
 .dropdown-content {
     display: none;
     position: absolute;
@@ -74,6 +79,7 @@ body {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+
     a {
         float: none;
         color: black;
@@ -81,15 +87,14 @@ body {
         text-decoration: none;
         display: block;
         text-align: left;
+
         &:hover {
             background-color: #ddd;
         }
     }
 }
 
-
 /* Show the dropdown menu on hover */
-
 .dropdown:hover .dropdown-content {
     display: block;
 }

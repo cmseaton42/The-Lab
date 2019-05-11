@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import anime from "animejs";
 
-import "./dancing-ball.css";
+import "./dancing-ball.scss";
 
 export default class DancingBalls extends Component {
     constructor() {

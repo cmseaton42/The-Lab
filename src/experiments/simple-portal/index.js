@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { createPortal } from "react-dom";
 
-import "./simple-portal.css";
+import "./simple-portal.scss";
 
 export default class SimplePortal extends Component {
     constructor() {
@@ -52,8 +52,7 @@ export default class SimplePortal extends Component {
                             this.setState({
                                 showDialog: !showDialog
                             })
-                        }
-                    >
+                        }>
                         Add Item
                     </button>
                 </div>
@@ -71,10 +70,7 @@ export default class SimplePortal extends Component {
                 {showDialog === true ? (
                     <DialogModal onFocus={this._onFocus}>
                         <div className="dialog-wrapper">
-                            <i
-                                onClick={e => this.setState({ showDialog: false })}
-                                className="fa fa-close btn-close"
-                            />
+                            <i onClick={e => this.setState({ showDialog: false })} className="fa fa-close btn-close" />
                             <h3>New List Item</h3>
                             <form onSubmit={this._onSubmit}>
                                 <input
